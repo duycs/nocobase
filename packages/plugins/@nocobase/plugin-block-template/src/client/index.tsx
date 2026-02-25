@@ -148,7 +148,7 @@ export class PluginBlockTemplateClient extends Plugin {
         for (const key in schemaSettings) {
           const schemaSetting = this.app.schemaSettingsManager.get(key);
           // if not filter out fieldSettings:component:, we will show two revert setting item
-          if (schemaSetting && !key.startsWith('fieldSettings:component:')) {
+          if (schemaSetting && schemaSetting.items && !key.startsWith('fieldSettings:component:')) {
             for (let i = 0; i < schemaSetting.items.length; i++) {
               // hide reference template setting item
               hideConvertToBlockSettingItem(
