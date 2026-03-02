@@ -11,23 +11,21 @@
 
 import { Plugin } from '@nocobase/client';
 import { ObjectItemBlock } from './ObjectItemBlock';
+import { ObjectItemBlockInitializer } from './ObjectItemBlockInitializer';
 
 export class ObjectItemBlockPlugin extends Plugin {
   async load() {
     // 1. Đăng ký component vào hệ thống
     this.app.addComponents({
       ObjectItemBlock,
+      ObjectItemBlockInitializer,
     });
 
     // 2. Thêm vào Schema Initializer (Menu "Add block")
-    this.app.schemaSettingsManager.add('page:addBlock', [
-      {
-        name: 'objectItemBlock',
-        type: 'item',
-        title: 'Object Item Block',
-        component: 'ObjectItemBlock',
-      },
-    ]);
+    this.app.schemaInitializerManager.addItem('page:addBlock', 'otherBlocks.objectItemBlock', {
+      title: 'Object Item Block',
+      Component: 'ObjectItemBlockInitializer',
+    });
   }
 }
 

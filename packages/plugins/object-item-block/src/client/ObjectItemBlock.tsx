@@ -22,7 +22,7 @@ export const ObjectItemBlock = () => {
 
   if (loading) return <Spin />;
 
-  const items = data?.data?.data || [];
+  const items = (data as any)?.data || [];
 
   return (
     <Card title="Danh sách Object Items">
