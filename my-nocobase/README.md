@@ -1,4 +1,4 @@
-## INIT STEPS
+## NOCOBASE DEV
 
 ### 1. Require environment
 - Docker and Docker compose
@@ -9,7 +9,7 @@
   ```docker compose up -d```
 
 ### 3. Restore database
-  Restore Postgres backup file ```prod-dump-nocobase-...tar```
+  Restore Postgres backup file backup\prod-dump-nocobase-...tar
 
 ### 4. Build dev
   ```yarn install --frozen-lockfile```
@@ -25,5 +25,10 @@
   ```yarn dev```
 
 ### 8. Test
-Open [http://localhost:13000](http://localhost:13000) in a web browser. 
+Open [http://localhost:13000](http://localhost:13000) in a web browser.<br>
 The initial account and password are ```admin@nocobase.com``` and ```admin123```
+
+## PLUGIN
+
+### 1. csv-service
+### 2. object-item-block
