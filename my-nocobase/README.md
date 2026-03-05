@@ -29,8 +29,8 @@ Open [http://localhost:13000](http://localhost:13000) in a web browser.<br>
 The initial account and password are ```admin@nocobase.com``` and ```admin123```
 
 ## API
-(Swagger Docs)[http://localhost:13000/admin/settings/api-doc]<br>
-(Echo API)[https://app.echoapi.com/5dfeaf8ba002000/apis]
+[Swagger Docs](http://localhost:13000/admin/settings/api-doc)<br>
+[Echo API](https://app.echoapi.com/5dfeaf8ba002000/apis)
 
 ## PLUGIN
 Plugin folder: ackages/plugins/plugin-name
