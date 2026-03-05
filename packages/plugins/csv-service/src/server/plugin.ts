@@ -8,6 +8,7 @@
  */
 
 import { Plugin } from '@nocobase/server';
+import { QueryTypes } from 'sequelize';
 
 export class CsvServiceServer extends Plugin {
   async afterAdd() {}
@@ -16,19 +17,25 @@ export class CsvServiceServer extends Plugin {
 
   async load() {
     this.app.resourceManager.define({
-      name: 'csv/import',
+      name: 'csv',
       actions: {
-        // Endpoint: GET /api/my_custom_api:checkStatus
-        checkStatus: async (ctx, next) => {
-          ctx.body = {
-            status: 'running',
-            timestamp: new Date().toISOString(),
-          };
-          await next();
-        },
-        // Endpoint: GET /api/my_custom_api:helloWorld
-        helloWorld: async (ctx, next) => {
-          ctx.body = { message: 'Hello World' };
+        version: async (ctx, next) => {
+          const { vehicle_object_item_id } = ctx.query;
+          const db = this.app.db;
+
+          const result = await db.sequelize.query(
+            `
+            SELECT DISTINCT version FROM vehicle_test_values
+            WHERE vehicle_object_item_id = :vehicle_object_item_id
+            ORDER BY version DESC`,
+            {
+              replacements: { vehicle_object_item_id: vehicle_object_item_id },
+              type: QueryTypes.SELECT,
+            },
+          );
+
+          ctx.body = result;
+
           await next();
         },
       },

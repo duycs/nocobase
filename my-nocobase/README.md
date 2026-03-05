@@ -9,17 +9,17 @@
   ```docker compose up -d```
 
 ### 3. Restore database
-  Restore Postgres backup file backup\prod-dump-nocobase-...tar
+  Restore Postgres backup file *backup\prod-dump-nocobase-...tar*
 
 ### 4. Build dev
-  ```yarn install --frozen-lockfile```
+  ```yarn install --frozen-lockfile```<br>
   ```yarn nocobase install --lang=en-US```
 
 ### 5. Add new plugin
-  ```yarn pm create @my-nocobase/hello-world```
+  ```yarn pm create @my-nocobase/csv-service```
 
 ### 6. Build the plugin
-  ```yarn build hello-world```
+  ```yarn build csv-service```
 
 ### 7. Run dev
   ```yarn dev```
@@ -28,7 +28,10 @@
 Open [http://localhost:13000](http://localhost:13000) in a web browser.<br>
 The initial account and password are ```admin@nocobase.com``` and ```admin123```
 
-## PLUGIN
+## API
+[http://localhost:13000/admin/settings/api-doc](Swagger Docs)
+[https://app.echoapi.com/5dfeaf8ba002000/apis](Echo API)
 
+## PLUGIN
 ### 1. csv-service
 ### 2. object-item-block

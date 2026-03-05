@@ -7,42 +7,28 @@
  * For more information, please refer to: https://www.nocobase.com/agreement.
  */
 
+import { number } from 'joi';
+
 export default {
   openapi: '3.0.2',
   info: {
     title: 'NocoBase API - CSV Service plugin',
   },
   paths: {
-    '/my_custom_api:helloWorld': {
+    '/csv:version': {
       get: {
         tags: ['csv-service'],
-        summary: 'Hello World',
-        description: 'Returns a Hello World message.',
-        responses: {
-          200: {
-            description: 'OK',
-            content: {
-              'application/json': {
-                schema: {
-                  type: 'object',
-                  properties: {
-                    message: {
-                      type: 'string',
-                      example: 'Hello World',
-                    },
-                  },
-                },
-              },
+        summary: 'Get csv version',
+        parameters: [
+          {
+            name: 'vehicle_object_item_id',
+            in: 'query',
+            required: false,
+            schema: {
+              type: 'number',
             },
           },
-        },
-      },
-    },
-    '/my_custom_api:checkStatus': {
-      get: {
-        tags: ['csv-service'],
-        summary: 'Check system status',
-        description: 'Returns the current status and server timestamp.',
+        ],
         responses: {
           200: {
             description: 'OK',
@@ -51,8 +37,10 @@ export default {
                 schema: {
                   type: 'object',
                   properties: {
-                    status: { type: 'string', example: 'running' },
-                    timestamp: { type: 'string', format: 'date-time' },
+                    version: {
+                      type: number,
+                      example: 1,
+                    },
                   },
                 },
               },
