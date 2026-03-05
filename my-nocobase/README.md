@@ -29,7 +29,7 @@ Open [http://localhost:13000](http://localhost:13000) in a web browser.<br>
 The initial account and password are ```admin@nocobase.com``` and ```admin123```
 
 ## API
-[http://localhost:13000/admin/settings/api-doc](Swagger Docs)
+[http://localhost:13000/admin/settings/api-doc](Swagger Docs)<br>
 [https://app.echoapi.com/5dfeaf8ba002000/apis](Echo API)
 
 ## PLUGIN
