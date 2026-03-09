@@ -33,7 +33,7 @@ The initial account and password are ```admin@nocobase.com``` and ```admin123```
 [Echo API](https://app.echoapi.com/5dfeaf8ba002000/apis)
 
 ## PLUGIN
-Plugin folder: ackages/plugins/plugin-name
+Plugin folder: *packages/plugins/plugin-name*
 
 ### 1. csv-service
 ### 2. object-item-block
