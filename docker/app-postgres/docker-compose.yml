@@ -17,6 +17,8 @@ services:
       - DB_PASSWORD=nocobase
     volumes:
       - ./storage:/app/nocobase/storage
+      - ./custom-plugins:/app/nocobase/custom-plugins
+      - ./custom-plugins/csv-service:/app/nocobase/node_modules/csv-service
     ports:
       - "13000:80"
     depends_on:
